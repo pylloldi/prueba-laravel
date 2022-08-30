@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Crear nueva categoría
+    Crear categoría
 @endsection
 
 @section('contenido')

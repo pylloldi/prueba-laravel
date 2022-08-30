@@ -5,14 +5,14 @@
 @endsection
 
 @section('contenido')
-<a href="{{ route('categories.create') }}"
-    class="flex items-center p-2 gap-2 text-white bg-green-600 hover:bg-green-700 rounded text-sm uppercase font-bold cursor-pointer w-32">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
-      </svg>      
-        Categoría
-</a>
 <div class="md:flex md:items-center flex-col justify-center items-center">
+    <a href="{{ route('categories.create') }}"
+        class="flex items-center p-2 gap-2 text-white bg-green-600 hover:bg-green-700 rounded text-sm uppercase font-bold cursor-pointer w-32">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+          </svg>      
+            Categoría
+    </a>
     <div class="md:w-10/12 lg:w-8/12 px-5 bg-white p-6 rounded-lg shadow-xl">
     <table class="w-full text-sm text-left text-gray-700">
         <thead class="text-xs text-gray-700 uppercase">
