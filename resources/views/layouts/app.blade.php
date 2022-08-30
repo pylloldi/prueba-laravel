@@ -16,7 +16,7 @@
                     <div class="flex space-x-7">
                         <div>
                             <!-- Website Logo -->
-                            <a href="#" class="flex items-center py-4 px-2">
+                            <a href="{{route('posts.index', auth()->user()->username)}}" class="flex items-center py-4 px-2">
                                 <span class="font-semibold text-gray-500 text-lg">Prueba PYC</span>
                             </a>
                         </div>
