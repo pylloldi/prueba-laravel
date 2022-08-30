@@ -62,23 +62,23 @@
                             </button>
                             <!-- Dropdown menu -->
                             <div id="dropdownTarget"
-                                class="hidden z-10 w-auto bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+                                class="hidden z-10 w-auto bg-white rounded divide-y divide-gray-100 shadow"
                                 style="position: absolute; margin: 0px; transform: translate(394px, 80px);">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                                <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
                                     <li>
                                         <a href="{{route('posts.index', auth()->user()->username)}}"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600">Publicaciones</a>
+                                            class="block py-2 px-4 hover:bg-blue-100">Publicaciones</a>
                                     </li>
                                     <li>
                                         <a href="{{route('profile.index')}}"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600">Editar
+                                            class="block py-2 px-4 hover:bg-blue-100">Editar
                                             perfil
                                         </a>
                                     </li>
                                     <li>
                                         <form action="{{route('logout')}}" method="POST">
                                             @csrf
-                                            <button type="submit" class="block py-2 px-4 hover:bg-gray-100">Cerrar sesión</button>
+                                            <button type="submit" class="block py-2 px-4 hover:bg-blue-100">Cerrar sesión</button>
                                         </form>
                                     </li>
                                 </ul>
@@ -177,7 +177,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                                   </svg>                                  
-                                login
+                                Login
                             </a>
                             <a href="{{route('register')}}"
                                 class="flex items-center gap-2 p-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
@@ -189,8 +189,44 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button">
+                            <svg class=" w-6 h-6 text-gray-500 hover:text-blue-500 " x-show="!showMenu" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu">
+                <ul class="">
+                    <li class="border">
+                        <a href="{{route('login')}}"
+                            class="block text-sm px-2 py-4 text-gray-500 font-semibold hover:bg-blue-500 hover:text-white">
+                            Login
+                        </a>
+                    </li>
+                    <li class="border">
+                        <a href="{{route('register')}}"
+                            class="block text-sm px-2 py-4 text-gray-500 font-semibold hover:bg-blue-500 hover:text-white">
+                            Crear cuenta
+                        </a>
+                    </li>                    
+                </ul>
+            </div>
+            <script>   
+                const btn = document.querySelector("button.mobile-menu-button");
+                const menu = document.querySelector(".mobile-menu");
+    
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            </script>
         </nav>
         @endguest
 
